@@ -11,12 +11,12 @@ import { connect } from 'react-redux'
 
 const mapStateToProps = state => {
     return {
-        campsite: state.campsites,
+        campsites: state.campsites,
         comments: state.comments,
         partners: state.partners,
         promotions: state.promotions
-    }
-}
+    };
+};
 
 class Main extends Component {
 
@@ -47,9 +47,9 @@ class Main extends Component {
                 <Switch>
                     <Route path='/home' component={HomePage} />
                     <Route exact path='/directory' render={() => <Directory campsites={this.props.campsites} />} />
-                    <Route path='/directory/:campsiteId'component={CampsiteWithId} />
-                    <Route exact path='/aboutus' render={() => <About partners={this.props.partners} /> } />
+                    <Route path='/directory/:campsiteId' component={CampsiteWithId} />
                     <Route exact path='/contactus' component={Contact} />
+                    <Route exact path='/aboutus' render={() => <About partners={this.props.partners} /> } />
                     <Redirect to='/home' />
                 </Switch>
                 <Footer />
