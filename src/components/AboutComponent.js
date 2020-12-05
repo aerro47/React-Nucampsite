@@ -8,7 +8,7 @@ function About(props) {
     const partners = props.partners.map(partner => {
         return (
             <Media tag="li" key={partner.id}>
-                {RenderPartner({partner})}
+                {RenderPartner(partner)}
             </Media>
         );
     });
@@ -75,7 +75,7 @@ function About(props) {
     );
 }
 
-function RenderPartner ({ partner }) {
+function RenderPartner (partner) {
     if (partner.name) {
         return (
             <React.Fragment>
